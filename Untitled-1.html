@@ -243,6 +243,95 @@
                     programas e formatos de conversão existentes: não está no escopo do W3 escrever novos conversores. O
                     último recurso na negociação é a transferência binária do conteúdo do nó para um arquivo no espaço de
                     arquivo do usuário. Negociar o formato para apresentação é particular do W3.</p>
+            
+            <h3>Fases do projeto</h3>
+
+            <p>Com os recursos mencionados abaixo, prevemos que as duas primeiras fases do projeto atingirão os seguintesobjetivos:</p>
+
+            <h3>Fase 1 — Meta: 3 meses a partir do início</h3>
+
+            <ul>
+                <li>Navegadores em terminais burros para abrir a leitura a qualquer pessoa com um computador ou PC.(?)</li>
+                <li>Navegadores em terminais vt220 para oferecer leitura orientada por cursor a uma grande proporção deleitores;
+                    Um navegador no Macintosh no estilo Macintosh; Um navegador no NeXT usando asferramentas NeXTStep, como um 
+                    protótipo rápido para ideias em design de interface humana etécnicas de navegação.</li>
+                <li>Um servidor que fornece acesso ao mundo de artigos de notícias da Usenet/Internet. *</li>
+                <li>Um servidor que fornece acesso a todas as informações atualmente armazenadas no CERNVM emencionadas no 
+                    índice FIND. Isso deve incluir notas da biblioteca do programa CERN, telas de ajudado IBM e CERN CMS, redações 
+                    do CERN/CN, artigos do Computer Newsletter, etc.</li>
+                <li>Um servidor que pode ser instalado em qualquer máquina para permitir que arquivos naquela máquina sejam 
+                    acessados como hipertexto.</li>
+                <li>A capacidade dos usuários de escrever, usando tags de marcação, seu próprio hipertexto para arquivosde ajuda. 
+                    Nenhuma outra capacidade de edição de hipertexto será necessariamente implementada nestafase.</li>
+                <li>Um processo de gateway para permitir acesso entre os mundos da Internet e do protocolo DECnet.</li>
+                <li>Um conjunto de diretrizes sobre como gerenciar um servidor de hipertexto.</li>
+                <li>Uma análise de requisitos das necessidades de acesso à informação para um grande experimento.</li>
+                
+            </ul>
+
+            <p>Neste estágio, a leitura é universal, mas a criação de novos materiais depende de sistemas existentes. Porexemplo, 
+                a introdução de novos materiais para o índice FIND, ou a publicação de artigos de notícias usará osmesmos 
+                procedimentos atuais. Ganhamos experiência útil na representação de dados existentes em forma dehipertexto, 
+                e nos tipos de auxílios de navegação e outros apreciados por usuários em física de alta energia.</p>
+
+            <h3>Fase 2 — Meta: 6 meses a partir do início</h3>
+
+            <p>Nesta fase importante, pretendemos permitir</p>
+
+            <ul>
+                <li>A criação de novos links e novos materiais pelos leitores. Nesta fase, a autoria se torna universal.</li>
+                <li>Um navegador de tela cheia no VM/XA para aqueles que usam CERNVM e outros sites HEP VM;</li>
+                <li>Um navegador/editor X-window, fornecendo os recursos sofisticados originalmente prototipados sob 
+                    oNeXTStep para a ampla comunidade baseada em X. (Imaginamos usar OSF/Motif sujeito àdisponibilidade)</li>
+                <li>A notificação automática de um leitor quando um novo material de interesse para ele/ela se tornadisponível. 
+                    Isso é essencial para artigos de notícias, mas é muito útil para qualquer outro material.</li>
+            </ul>
+
+            <p>A capacidade dos leitores de criar links permite anotações por usuários de dados existentes, permite 
+                adicionara si mesmos e seus documentos a listas (listas de discussão, índices, etc.). Deve ser possível para 
+                os usuáriosvincular documentos públicos a (por exemplo) relatórios de bugs, correções de bugs e outros 
+                documentos queos próprios autores podem nunca ter percebido que existiam. Esta fase permite a autoria 
+                colaborativa. Ela fornece um lugar para colocar qualquer informação de forma que ela possa ser encontrada 
+                mais tarde. Facilitar a mudança na web é, portanto, a chave para evitar informações obsoletas. Deve-se ser 
+                capaz derastrear a fonte da informação, contornar e, em seguida, reparar falhas na web.</p>
+
+            <h3>Recursos necessários</h3>
+
+            <h4>1. Pessoas</h4>
+
+            <p>As seguintes funções são identificáveis. Elas não correspondem necessariamente a indivíduos em uma baseum 
+                para um. As iniciais entre parênteses indicam pessoas que já expressaram interesse no projeto e que têmas 
+                habilidades necessárias, mas não indicam nenhum comprometimento ainda de sua parte ou da parte deseus 
+                gerentes. Estamos, é claro, muito abertos ao envolvimento de outros.</p>
+
+            <ul>
+                <li>Arquiteto de sistemas. Coordenar desenvolvimento, definição de protocolo, etc.; garante integridade 
+                    dodesign. (50% TBL?) Pesquisa de mercado e planejador de produtos. Discuta o projeto e seus recursos 
+                    com usuários potenciais e reais em todas as divisões. Prepare critérios para seleção de recursos e 
+                    prioridade de desenvolvimento. (50% RC?)</li>
+                <li>Hyper-Librarian. Supervisiona a rede de dados disponíveis, garantindo sua coerência. Interface 
+                    comusuários, treina usuários. Gerencia índices e sistemas de palavras-chave. Gerencia dados fornecidos 
+                    pelo próprio projeto. (100% KG?)</li>
+                <li>Engenheiro de software: NeXTStep. Fornecer interface de navegador/editor sob as ferramentas de interface
+                     humana do NeXTStep. Experimentar com auxílios de navegação. Manter um conhecimento atualizado do mundo 
+                     do NeXTStep. (50%TBL?)</li>
+                <li>Engenheiro de software: X-windows e interface humana. Fornecer interface humana de navegador/editor 
+                    sob OSF/Motif. Responder a sugestões de usuários para melhorias e opções de facilidade de uso. Criar 
+                    uma interface humana estética e prática. Manter um conhecimento contínuo do mundo X. (75%RJ?)</li>
+                <li>Engenheiro de software: mainframe IBM. Fornece serviço de navegador em CERNVM e outros sites HEP 
+                    VM. Mantém o software do servidor FIND. Mantém um conhecimento atualizado do CMS, mundo Rexx. (75% BP?)</li>
+                <li>Engenheiro de software: Macintosh. Forneça navegador/editor para o mac, usando quaisquer ferramentas
+                     que sejam apropriadas (Thnk-C, HyperCard, etc?). (50%RC?)</li>
+                <li>Engenheiro de software: C. Ajude a escrever código para navegadores de terminal burro ou vt100, e 
+                    código de navegador portátil para ser compartilhado entre navegadores. Isso pode incluir um projeto de 
+                    estudante técnico. (100% NP? + ANOther?)</li>
+            </ul>
+
+            <p>Prevemos que pode surgir uma demanda por navegadores em sistemas específicos, por personalizações
+                específicas e por servidores para tornar dados específicos existentes disponíveis online como hipertexto.
+                Pretendemos apoiar entusiasticamente tal ampliação da web. Claro, podemos ter que recorrer a mais mão de 
+                obra e expertise específica nesses casos.</p>        
+            
 
 
 
