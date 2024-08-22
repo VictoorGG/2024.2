@@ -124,6 +124,126 @@
 
         <h3>Aplicações</h3>
 
+        <p>A aplicação de um sistema de hipertexto universal, uma vez em vigor, cobrirá muitas áreas, como registro de
+            documentos, ajuda on-line, documentação de projetos, esquemas de notícias e assim por diante. Seria
+            inapropriado para nós (em vez dos responsáveis) sugerir áreas específicas, mas experimentar ajuda on-line,
+            ajuda on-line aceleradora, assistência para operadores de centros de computação e a disseminação de
+            informações por serviços centrais, como o escritório do usuário e as divisões CN e ECP, são candidatos
+            óbvios. A WorldWideWeb (ou W3) pretende atender a esses serviços em toda a comunidade HEP.</p>
+
+        <h3>Âmbito: Objetivos e não objetivos</h3>
+
+        <p>O projeto operará em um certo subconjunto bem definido da área de assunto frequentemente associada à tag
+            "Hypertext". Ele terá como objetivo:</p>
+
+            <ul>
+                <li>fornecer um protocolo comum (simples) para solicitar informações legíveis por humanos armazenadas
+                    em um sistema remoto, usando redes;</li>
+                <li>fornecer um protocolo dentro do qual as informações possam ser trocadas automaticamente em um
+                    formato comum ao fornecedor e ao consumidor;</li>
+                <li>fornecer algum método de leitura de pelo menos texto (se não gráficos) usando uma grande proporção
+                    das telas de computador em uso no CERN;</li>
+                <li>fornecer e manter pelo menos uma coleção de documentos, na qual os usuários podem (mas não são
+                    obrigados a) colocar seus documentos. Esta coleção incluirá muitos dados existentes. (Isto é em parte
+                    para nos dar experiência em primeira mão do uso do sistema, e em parte porque os membros do projeto
+                    já terão documentação pela qual são responsáveis)</li>
+                <li>fornecer o software acima gratuitamente a qualquer pessoa.</li>
+            </ul>
+                
+            <h3>O projeto não terá como objetivo</h3>
+          
+            <ul>
+                <li>para fornecer conversões onde elas não existam entre os muitos formatos de armazenamento de
+                    documentos no CERN, embora fornecendo uma estrutura na qual tais utilitários de conversão possam
+                    se encaixar;</li>
+                <li>forçar os usuários a usar qualquer processador de texto ou formato de marcação específico;</li>
+                <li>para pesquisar recursos multimídia sofisticados, como som e vídeo;</li>
+                <li>para usar sistemas sofisticados de autorização de rede. os dados serão legíveis pelo mundo
+                    (literalmente), ou serão legíveis somente em um sistema de arquivos, em cujo caso o sistema de
+                    proteção do sistema de arquivos será usado para privacidade. Todo o tráfego de rede será público.</li>
+            </ul>
+
+            <h3>Análise de Requisitos</h3>
+
+            <p>Para garantir a resposta às necessidades reais, uma análise de requisitos para as necessidades de acesso à
+                informação de um grande experimento do CERN será conduzida logo no início, paralelamente à primeira
+                fase do projeto.</p>
+            
+            <p>Esta análise será inicialmente limitada às atividades dos membros do experimento Aleph, e posteriormente
+                será estendida a pelo menos um outro experimento. Será feita uma visão geral da geração, armazenamento e
+                recuperação de informações, independente da forma (máquina, papel) e independente da finalidade
+                (experimento, administração).</p>
+            
+            <p>O resultado deve ser:</p>
+
+            <ul>
+                <li>listas de fontes, depósitos e sumidouros de informação,</li>
+                <li>listas de formatos,</li>
+                <li>diagramas de fluxo,</li>
+                <li>estatísticas sobre tráfego,</li>
+                <li>níveis estimados de importância dos fluxos,</li>
+                <li>listas de desejos do cliente e/ou melhorias sugeridas,</li>
+                <li>níveis estimados de satisfação com as plataformas,</li>
+                <li>estimativa de urgência para melhorias.</li>
+            </ul>
+            <p>Esta análise em si não proporá soluções ou melhorias, mas seus resultados orientarão o projeto.</p>
+
+            <h3>Arquitetura</h3>
+
+            <p>A arquitetura do mundo do hipertexto é de dados armazenados em máquinas servidoras e processos clientes
+                nas mesmas ou em outras máquinas. As máquinas são vinculadas por alguma rede (fig. 2). Fig. 2: modelo
+                proposto para o mundo do hipertexto Uma estação de trabalho é uma máquina independente em seu escritório
+                ou um terminal conectado a um computador próximo e conectado à mesma rede. Os servidores são processos
+                ativos que respondem a solicitações. Os dados do hipertexto são explicitamente acessíveis a eles. Os
+                servidores podem ser muitos no mesmo sistema de computador, mas cada um atende a uma base de
+                hipertexto específica. Os clientes são processos do navegador, geralmente, mas não necessariamente, em um
+                sistema de computador diferente. As informações passadas são de dois tipos: nós e links.</p>
+
+            <h3>Blocos de construção</h3>
+
+            <p>Navegadores e servidores são os dois blocos de construção a serem fornecidos.</p>
+
+            <h4>Um navegador</h4>
+
+            <p>é um programa de aplicação nativo em execução na máquina cliente:</p>
+
+            <ul>
+                <li>ele executa a exibição de um nó de hipertexto usando o ambiente de hardware e software do cliente.
+                    Por exemplo, um navegador Macintosh usará a aparência e comportamento da interface Macintosh.</li>
+                <li>ele executa a travessia de links. Por exemplo, ao usar um Macintosh para navegar no CERNVM FIND,
+                    será o navegador do Macintosh que lembrará quais links foram percorridos, como voltar etc., enquanto
+                    o servidor CERNVM apenas responde entregando os nós do navegador e não tem ideia de quais nós o
+                    usuário visitou.</li>
+                <li>ele realiza a negociação de formatos em diálogo com o servidor. Por exemplo, um navegador para um
+                    display do tipo VT100 sempre negociará somente texto ASCII, enquanto um navegador Macintosh
+                    pode ser construído para aceitar PostScript ou SGML.</li>
+            </ul>
+
+            <h4>Um servidor</h4>
+
+            <p>é um programa de aplicação nativo em execução na máquina do servidor:</p>
+
+            <ul>
+                <li>ele gerencia uma rede de nós naquela máquina.</li>
+                <li>Ele negocia o formato de apresentação com o navegador, realizando conversões instantâneas (ou em
+                    cache) a partir de seu próprio formato interno, se houver.</li>
+            </ul>
+
+            <h3>Operação</h3>
+
+            <p> Um link é especificado como uma string ASCII da qual o navegador pode deduzir um método adequado de
+                contato com um servidor apropriado. Quando um link é seguido, o navegador endereça a solicitação do nó ao
+                servidor. O servidor, portanto, não tem nada a saber sobre outros servidores ou outras webs e pode ser
+                mantido simples.</p>
+
+            <p>Uma vez que o servidor tenha localizado o nó solicitado, ele saberá a partir do conteúdo do nó qual é o
+                    formato do nó (por exemplo, ASCII puro, marcado, armazenamento em processador de texto e qual
+                    processador de texto etc.). O servidor então inicia uma negociação com o navegador, na qual eles decidem
+                    entre si qual formato é aceitável para exibição na tela do usuário. Essa negociação será baseada apenas em
+                    programas e formatos de conversão existentes: não está no escopo do W3 escrever novos conversores. O
+                    último recurso na negociação é a transferência binária do conteúdo do nó para um arquivo no espaço de
+                    arquivo do usuário. Negociar o formato para apresentação é particular do W3.</p>
+
 
 
 
